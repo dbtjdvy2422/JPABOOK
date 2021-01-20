@@ -38,7 +38,8 @@ public class MemberController {
  }
  
  Address address = new Address(form.getCity(), form.getStreet(),form.getZipcode());
- Member member = new Member(); member.setName(form.getName());
+ Member member = new Member(); 
+ member.setName(form.getName());
  member.setAddress(address);
  memberService.join(member);
  return "redirect:/";
@@ -47,7 +48,8 @@ public class MemberController {
  //추가
  @GetMapping(value = "/members")
  public String list(Model model) {
- List<Member> members = memberService.findMembers(); model.addAttribute("members", members);
+ List<Member> members = memberService.findMembers(); 
+ model.addAttribute("members", members);
  return "members/memberList";
  }
  
